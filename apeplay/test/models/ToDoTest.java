@@ -10,6 +10,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import play.libs.Yaml;
+
+import com.avaje.ebean.Ebean;
+
 public class ToDoTest {
 
 	@Before

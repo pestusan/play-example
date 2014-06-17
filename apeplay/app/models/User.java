@@ -28,4 +28,8 @@ public class User extends Model {
 		return find.where().eq("email", email).eq("password", password).findUnique();
 	}
 	
+	public static int count() {
+		return find.findRowCount();
+	}
+	
 }

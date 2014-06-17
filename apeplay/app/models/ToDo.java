@@ -27,4 +27,8 @@ public class ToDo extends Model {
 	public static List<ToDo> findTodosByUserEMail(String email) {
 		return find.where().eq("done",false).eq("assignedUser.email", email).findList();
 	}
+	
+	public static int count() {
+		return find.findRowCount();
+	}
 }

@@ -1,4 +1,4 @@
-name := "y"
+name := "apeplay"
 
 version := "1.0-SNAPSHOT"
 
