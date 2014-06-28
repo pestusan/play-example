@@ -1,7 +1,12 @@
-@(message: String)
+@(todos: List[ToDo])
 
 @main("Welcome to playwell") {
-
-    @play20.welcome(message, style = "Java")
+	<h1>TODOS</h1>
+	<ul>
+		@for(todo <- todos) {
+			<li data-todo-id="@todo.id">
+			<h4>@todo.description</h4>
+		}
+	</ul>
 
 }
