@@ -1,22 +1,15 @@
+import static org.fest.assertions.Assertions.assertThat;
+import static play.test.Helpers.contentAsString;
+import static play.test.Helpers.contentType;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.*;
+import models.ToDo;
 
-import play.mvc.*;
-import play.test.*;
-import play.data.DynamicForm;
-import play.data.validation.ValidationError;
-import play.data.validation.Constraints.RequiredValidator;
-import play.i18n.Lang;
-import play.libs.F;
-import play.libs.F.*;
+import org.junit.Test;
 
-import static play.test.Helpers.*;
-import static org.fest.assertions.Assertions.*;
+import play.mvc.Content;
 
 
 /**
@@ -35,9 +28,10 @@ public class ApplicationTest {
 
     @Test
     public void renderTemplate() {
-        Content html = views.html.index.render("Hello playwell!");
+    	List<ToDo> toDos = new ArrayList<ToDo>();
+        Content html = views.html.index.render(toDos);
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("Hello playwell!");
+        assertThat(contentAsString(html)).contains("Welcome to playwell");
     }
 
 

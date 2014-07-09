@@ -1,4 +1,4 @@
-package controllers;
+
 import java.util.List;
 
 import models.User;
@@ -14,8 +14,9 @@ public class Global extends GlobalSettings{
 
 	@Override
 	public void onStart(Application app) {
+		Logger.info("onStart");
 		if(app.isDev() && User.count() == 0) {
-			Logger.debug("Bootstrapping with default data");
+			Logger.info("Bootstrapping with default data");
 			Ebean.save((List)Yaml.load("init-data.yml"));
 		}
 	}
