@@ -43,7 +43,7 @@ public class UserTest {
 	
 	@Test
 	public void testAuthenticatePositivUserLoadByYaml() {
-		assertEquals(2, User.count());
+		assertEquals(3, User.count());
 	}
 
 }

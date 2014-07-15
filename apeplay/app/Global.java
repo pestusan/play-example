@@ -17,7 +17,8 @@ public class Global extends GlobalSettings{
 		Logger.info("onStart");
 		if(app.isDev() && User.count() == 0) {
 			Logger.info("Bootstrapping with default data");
-			Ebean.save((List)Yaml.load("init-data.yml"));
+			int count = Ebean.save((List)Yaml.load("test-data.yml"));
+			Logger.info("Count {}", count);
 		}
 	}
 }

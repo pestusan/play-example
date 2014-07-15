@@ -11,6 +11,12 @@
   firstName: Jane
   lastName: Krautrock
   password: secret
+
+- &alex !!models.User
+  email: apester@gmx.net
+  firstName: Alexander
+  lastName: Pester
+  password: test
   
 # ToDos
 
@@ -40,3 +46,14 @@
   description: Deploy to cloud
   done: false
   assignedUser: *jane
+  
+- !!models.ToDo
+  description: CMP AS3
+  done: false
+  assignedUser: *alex
+  
+- !!models.ToDo
+  description: Technologieaustausch Play Framework
+  done: false
+  assignedUser: *alex
+  

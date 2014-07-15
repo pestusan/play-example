@@ -12,6 +12,12 @@
   lastName: Krautrock
   password: secret
   
+- &jane2 !!models.User
+  email: jane@example.com
+  firstName: Janes
+  lastName: Krautrock
+  password: secret
+  
 # ToDos
 
 - !!models.ToDo
@@ -40,3 +46,4 @@
   description: Deploy to cloud
   done: false
   assignedUser: *jane
+  

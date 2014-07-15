@@ -8,7 +8,9 @@ import views.html.*;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render(ToDo.findTodosByUserEMail("bob@example.com")));
+    	String user = session("email");
+    	Logger.info(user);
+        return ok(index.render(ToDo.findTodosByUserEMail(user)));
     }
 
 }
